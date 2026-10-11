@@ -58,6 +58,7 @@ int rpos = 6; // posição olho direito
 int aleat = 5;
 bool awake = false;
 uint8_t contDisplayWifi = 0;
+int potencia = 10;
 
 //motors
 Servo motorDir;
@@ -147,13 +148,13 @@ void setup() {
       String state = request->getParam("state")->value();
 
       if (state == "Front") {
-        frente(100);
+        frente(potencia * 2);
       } else if (state == "Left") {
-        esquerda(100);
+        esquerda(potencia);
       } else if (state == "Right") {
-        direita(100);
+        direita(potencia);
       } else if (state == "Back") {
-        tras(50);
+        tras(potencia);
       } else if (state == "Stop") {
         pare();
       } else {
